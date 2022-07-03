@@ -1,0 +1,40 @@
+{% extends 'layout.html' %}
+{% block content %}
+<body>
+    <h1>Sign Up</h1>
+    <form  method="POST" action="{{url_for('signup',users='signup')}}">
+      {%if error%}
+        <h1>{{error}} </h1>
+      {%endif%}
+
+      <label for="name">Full Name </label><br>
+      <input type="text" name="name"><br>
+
+      <label for="username">Username </label><br>
+      <input type="text" name="username"><br>
+               
+      <label for="email">Email </label><br>
+      <input type="text" name="email"><br>
+               
+      <label for="passwordd">Password </label><br>
+      <input  autocomplete="off" type="password" name="password" id=""><br>
+
+      <label for="confirm_passwordd">Confirm Password </label><br>
+      <input  autocomplete="off" type="password" name="confirm_password" id=""><br>
+               
+      <label for="usertype_id">User type </label><br>
+      <select name="usertype_id">
+          <option value="" selected disabled>Select</option>
+          <option value="1">Expert</option>
+          <option value="2">Factory</option>
+          <option value="3">Customer</option>
+      </select><br>
+               
+      <label for="phone">Phone Number</label><br>
+      <input type="number" name="phone"><br>
+               
+               
+        <button type="submit">SignUp </button>
+      </form>
+    </body>
+{% endblock %}
