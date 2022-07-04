@@ -10,7 +10,7 @@ from models import Model1, postgres,User
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing import image
 from flask import Flask, redirect, render_template, request, url_for, session
-
+port = int(os.environ.get("PORT", 5000))
 app = Flask(__name__)
 app.secret_key='borto2ana'
 
@@ -259,4 +259,4 @@ def success():
         return render_template('model1.html')
 
 if __name__ == "__main__":
-    app.run(debug = True)
+    app.run(host='0.0.0.0', port=port)
