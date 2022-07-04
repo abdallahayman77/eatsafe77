@@ -13,7 +13,7 @@ from flask import Flask, redirect, render_template, request, url_for, session
 
 app = Flask(__name__)
 app.secret_key='borto2ana'
-app.config['SQLALCHEMY_DATABASE_URI']='postgres://vwqbwmjktbznpk:74d427d22d3c18c234a58c92a46aa903dcac7466db77026ec7dd05aaf9e8fdcb@ec2-44-198-82-71.compute-1.amazonaws.com:5432/d56f0c9tsir81v'
+
 
 HOST= "localhost"
 DATABASE="eatsafe"
@@ -261,3 +261,11 @@ def success():
 if __name__ == "__main__":
     app.run(debug = False)
     
+    
+
+def create_app(config_file='settings.py'):
+    app = Flask(__name__)
+
+    app.config.from_pyfile(config_file)
+    db.init_app(app)
+    return app
