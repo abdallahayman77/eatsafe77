@@ -259,4 +259,4 @@ def success():
         return render_template('model1.html')
 
 if __name__ == "__main__":
-    app.run(debug = True)
+    app.run(debug = False)
