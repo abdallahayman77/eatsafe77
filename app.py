@@ -260,3 +260,7 @@ def success():
 
 if __name__ == "__main__":
     app.run(debug = False)
+    
+def create_app():
+    app = Flask(__name__)
+    return app
